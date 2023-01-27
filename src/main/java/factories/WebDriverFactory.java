@@ -16,7 +16,7 @@ public class WebDriverFactory implements IFactory{
         switch ( BrowserData.valueOf(browserName.toUpperCase())){
             case CHROME:
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("--start-fullscreen");
+                chromeOptions.addArguments("--start-maximized");
                 return new ChromeDriver(chromeOptions);
             default:
                 throw new BrowserNotSupportedException(browserName);

@@ -41,12 +41,12 @@ public class HeaderMenuTest {
         new MainPage(driver).open();
 
         HeaderSubMenuPopUp headerSubMenuPopUP = new HeaderSubMenuPopUp(driver);
-        headerSubMenuPopUP.popUpShouldNotBeVisible();
+        headerSubMenuPopUP.popUpShouldNotBeVisible(HeaderMenuItemData.LEARNING);
 
         new HeaderMenuComponent(driver)
                 .moveCursorToHeaderItem(HeaderMenuItemData.LEARNING);
 
-        headerSubMenuPopUP.popUpShouldBeVisible();
+        headerSubMenuPopUP.popUpShouldBeVisible(HeaderMenuItemData.LEARNING);
         headerSubMenuPopUP.clickSubMenuItemByName(SubMenuCategoryCourseItemData.GAMEDEV);
 
         new CoursesFilterComponent(driver)

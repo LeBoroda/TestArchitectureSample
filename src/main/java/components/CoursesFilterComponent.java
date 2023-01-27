@@ -16,7 +16,7 @@ public class CoursesFilterComponent extends AbsBaseComponent{
     private String courseCategoryCheckBoxLocator = "//div[./label[text()='%s']]//input[@type='checkbox']";
 
     public CoursesFilterComponent coursesFilterState(CategoryData categoryData, boolean state){
-        String locator = String.format(courseCategoryCheckBoxLocator, categoryData.getName().toLowerCase(Locale.ROOT));
+        String locator = String.format(courseCategoryCheckBoxLocator, categoryData.getName());
         Assertions.assertEquals(state, $(By.xpath(locator)).isSelected());
         return this;
     }
